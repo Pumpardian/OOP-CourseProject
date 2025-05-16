@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ACS_Reception.UI.Pages.AddOrEditDoctorPage"
+             xmlns:converters="clr-namespace:ACS_Reception.UI.ValueConverters"
+             xmlns:models="clr-namespace:ACS_Reception.UI.ViewModels"
+             xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
+             x:DataType="models:AddOrEditDoctorPageViewModel"
+             Title="AddOrEditDoctorPage">
+
+    <ContentPage.Resources>
+        <converters:ValueToBooleanConverter x:Key="IsNotNull"/>
+    </ContentPage.Resources>
+
+    <StackLayout Margin="10" Spacing="15">
+        <VerticalStackLayout>
+            <Label Text="Doctor Type"/>
+            <Picker ItemsSource="{Binding DoctorTypes}" SelectedItem="{Binding Request.Doctor.DoctorType}"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Last Name"/>
+            <Entry Text="{Binding Request.Doctor.LastName}" Placeholder="Last Name"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="First Name"/>
+            <Entry Text="{Binding Request.Doctor.FirstName}" Placeholder="First Name"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout>
+            <Label Text="Cabinet Number"/>
+            <Entry Text="{Binding Request.Doctor.CabinetNumber}" Placeholder="Cabinet Number" Keyboard="Numeric"/>
+        </VerticalStackLayout>
+
+        <Button Text="Save" Command="{Binding AddOrEditDoctorCommand}"/>
+    </StackLayout>
+</ContentPage>

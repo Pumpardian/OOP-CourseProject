@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ACS_Reception.UI.Pages.DoctorDetailsPage"
+             xmlns:converters="clr-namespace:ACS_Reception.UI.ValueConverters"
+             xmlns:models="clr-namespace:ACS_Reception.UI.ViewModels"
+             xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
+             x:Name="DoctorDetails"
+             x:DataType="models:DoctorDetailsPageViewModel"
+             Title="DoctorDetailsPage">
+
+    <ContentPage.Resources>
+
+    </ContentPage.Resources>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing"
+                                    Command="{Binding BindingContext.GetDoctorByIdCommand, Source={x:Reference DoctorDetails}}"/>
+    </ContentPage.Behaviors>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{Binding EditDoctorCommand}" />
+        <ToolbarItem Text="Delete" Command="{Binding DeleteDoctorCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="10" Spacing="15">
+            <Border HorizontalOptions="Center" BackgroundColor="DarkSlateGray">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Last Name:"/>
+                        <Label Text="{Binding Doctor.LastName}"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="First Name:"/>
+                        <Label Text="{Binding Doctor.FirstName}"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Cabinet Number:"/>
+                        <Label Text="{Binding Doctor.CabinetNumber, StringFormat='{0}'}"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

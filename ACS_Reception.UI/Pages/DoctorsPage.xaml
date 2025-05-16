@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ACS_Reception.UI.Pages.DoctorsPage"
+             xmlns:converters="clr-namespace:ACS_Reception.UI.ValueConverters"
+             xmlns:models="clr-namespace:ACS_Reception.UI.ViewModels"
+             xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
+             x:Name="Doctors"
+             x:DataType="models:DoctorsPageViewModel"
+             Title="DoctorsPage">
+
+    <ContentPage.Resources>
+        <converters:ValueToBooleanConverter x:Key="IsNotNull" />
+    </ContentPage.Resources>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+        EventName="Appearing"
+        Command="{Binding BindingContext.UpdateDoctorListCommand, Source={x:Reference Doctors}}" />
+    </ContentPage.Behaviors>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddDoctorCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <StackLayout>
+            <Border BackgroundColor="Bisque"
+                StrokeShape="RoundRectangle 25,25,25,25"
+                StrokeThickness="2">
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Label Text="{Binding Doctors.Count, StringFormat='Doctors Count: {0}'}" TextColor="Black"/>
+                </HorizontalStackLayout>
+            </Border>
+
+            <CollectionView ItemsSource="{Binding Doctors}"
+            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="entities:Doctor">
+                        <Border Margin="5" Padding="5"
+                            BackgroundColor="AntiqueWhite">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source=
+                                                    {RelativeSource AncestorType=
+                                                    {x:Type models:DoctorsPageViewModel}},
+                                                    Path=ShowDoctorDetailsCommand}" 
+                                                  CommandParameter="{Binding}"/>
+                            </Border.GestureRecognizers>
+
+                            <Border Margin="5"
+                                    BackgroundColor="Black"
+                                    HeightRequest="110"
+                                    WidthRequest="110"
+                                    Clip="True" 
+                                    StrokeShape="RoundRectangle 25,25,25,25"
+                                    StrokeThickness="2"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                <HorizontalStackLayout VerticalOptions="Center" Spacing="15">
+                                    <Label Text="{Binding LastName}" TextColor="Black"/>
+                                    <Label Text="{Binding FirstName}" TextColor="Black"/>
+                                </HorizontalStackLayout>
+                            </Border>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

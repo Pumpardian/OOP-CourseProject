@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ACS_Reception.Application.RecordUseCases.Commands.AddRecordCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\AddRecordCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Commands.AddRecordHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\AddRecordHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Commands.DeleteRecordHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\DeleteRecordHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Commands.EditRecordCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\EditRecordCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Commands.EditRecordHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\EditRecordHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Commands.AddDoctorCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\AddDoctorCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Commands.AddDoctorHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\AddDoctorHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Commands.DeleteDoctorHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="12" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\DeleteDoctorHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Commands.EditDoctorCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\EditDoctorCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Commands.EditDoctorHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="11" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\EditDoctorHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Queries.GetDoctorByCabinetQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="11" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Queries\GetDoctorByCabinetQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Queries.GetDoctorByIdQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="12" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Queries\GetDoctorByIdQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Queries.GetDoctorByNameQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="10" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Queries\GetDoctorByNameQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Queries.GetDoctorsQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="9" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Queries\GetDoctorsQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Commands.AddCardCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\AddCardCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Commands.AddCardHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\AddCardHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Commands.DeleteCardHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\DeleteCardHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Commands.EditCardCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\EditCardCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Commands.EditCardHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\EditCardHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Queries.GetCardByIdQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Queries\GetCardByIdQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Queries.GetCardByLastNameAndYearQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Queries\GetCardByLastNameAndYearQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.CardUseCases.Queries.GetCardsQueryHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="2" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Queries\GetCardsQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Domain.Entities.Card" Collapsed="true">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Domain.Entities.CardRecord" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Domain.Entities.Doctor" Collapsed="true">
+    <Position X="7.5" Y="9" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Queries.GetRecordsByCardIdQueryHandler" Collapsed="true">
+    <Position X="9.5" Y="5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Queries\GetRecordsByCardIdQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Queries.GetRecordsQueryHandler" Collapsed="true">
+    <Position X="9.5" Y="6" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Queries\GetRecordsQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ACS_Reception.Application.DoctorUseCases.Commands.IAddOrEditDoctorRequest" Collapsed="true">
+    <Position X="4.5" Y="9" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Commands\IAddOrEditDoctorRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Doctor" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="ACS_Reception.Application.CardUseCases.Commands.IAddOrEditCardRequest" Collapsed="true">
+    <Position X="4.5" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CardUseCases\Commands\IAddOrEditCardRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Card" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="ACS_Reception.Application.RecordUseCases.Commands.IAddOrEditRecordRequest" Collapsed="true">
+    <Position X="4.5" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>RecordUseCases\Commands\IAddOrEditRecordRequest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CardRecord" />
+    </ShowAsAssociation>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ACS_Reception.UI.Pages.CardDetailsPage"
+             xmlns:converters="clr-namespace:ACS_Reception.UI.ValueConverters"
+             xmlns:models="clr-namespace:ACS_Reception.UI.ViewModels"
+             xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
+             x:Name="CardDetails"
+             x:DataType="models:CardDetailsPageViewModel"
+             Title="CardDetailsPage">
+
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing"
+                                        Command="{Binding BindingContext.GetCardByIdCommand, Source={x:Reference CardDetails}}"/>
+    </ContentPage.Behaviors>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit" Command="{Binding EditCardCommand}" />
+        <ToolbarItem Text="Delete" Command="{Binding DeleteCardCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Margin="10" Spacing="15">
+            <Border HorizontalOptions="Center" BackgroundColor="DarkSlateGray">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Last Name:"/>
+                        <Label Text="{Binding Card.LastName}"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="First Name:"/>
+                        <Label Text="{Binding Card.FirstName}"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Birthday:"/>
+                        <Label Text="{Binding Card.BirthDate, StringFormat='{0}'}"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <CollectionView ItemsSource="{Binding Records}"
+                            VerticalOptions="FillAndExpand">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="entities:CardRecord">
+                        <Border Margin="5" Padding="5"
+                                BackgroundColor="AntiqueWhite">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source=
+                                            {RelativeSource AncestorType=
+                                            {x:Type models:CardDetailsPageViewModel}},
+                                            Path=ShowRecordDetailsCommand}" 
+                                                      CommandParameter="{Binding}"/>
+                            </Border.GestureRecognizers>
+
+                            <Border Margin="5"
+                                    BackgroundColor="Black"
+                                    HeightRequest="110"
+                                    WidthRequest="110"
+                                    Clip="True" 
+                                    StrokeShape="RoundRectangle 25,25,25,25"
+                                    StrokeThickness="2"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center">
+                                <HorizontalStackLayout VerticalOptions="Center" Spacing="15">
+                                    <Label Text="{Binding GetRecordName}" TextColor="Black"/>
+                                    <Label Text="{Binding Date, StringFormat='Birth Date: {0}'}" TextColor="Black"/>
+                                </HorizontalStackLayout>
+                            </Border>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

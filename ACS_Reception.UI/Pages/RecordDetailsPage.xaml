@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="ACS_Reception.UI.Pages.RecordDetailsPage"
+             xmlns:converters="clr-namespace:ACS_Reception.UI.ValueConverters"
+             xmlns:models="clr-namespace:ACS_Reception.UI.ViewModels"
+             xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
+             x:Name="RecordDetails"
+             x:DataType="models:RecordDetailsPageViewModel"
+             Title="RecordDetailsPage">
+
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
+
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding BindingContext.GetRecordByIdCommand, Source={x:Reference RecordDetails}}"/>
+    </ContentPage.Behaviors>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <Border HorizontalOptions="Center" BackgroundColor="DarkSlateGray">
+                <VerticalStackLayout>
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Type:"/>
+                        <Label Text="{Binding Record.GetRecordName}"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                        <Label Text="Date:"/>
+                        <Label Text="{Binding Record.Date, StringFormat='{0}'}"/>
+                    </HorizontalStackLayout>
+                    
+                    <Label Text=":"/>
+                    
+                    <Label Text="{Binding Record.Note}"/>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>
