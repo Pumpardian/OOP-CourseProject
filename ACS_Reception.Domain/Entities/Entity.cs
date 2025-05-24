@@ -1,7 +1,9 @@
-﻿namespace ACS_Reception.Domain.Entities
+﻿using MongoDB.Bson;
+
+namespace ACS_Reception.Domain.Entities
 {
     public class Entity
     {
-        public int Id { get; }
+        public ObjectId Id { get; set; }
     }
 }

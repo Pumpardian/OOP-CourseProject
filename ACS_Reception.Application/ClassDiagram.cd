@@ -179,17 +179,14 @@
   <Class Name="ACS_Reception.Domain.Entities.Card" Collapsed="true">
     <Position X="7.5" Y="1" Width="1.5" />
     <TypeIdentifier />
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.CardRecord" Collapsed="true">
     <Position X="7.5" Y="5" Width="1.5" />
     <TypeIdentifier />
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.Doctor" Collapsed="true">
     <Position X="7.5" Y="9" Width="1.5" />
     <TypeIdentifier />
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ACS_Reception.Application.RecordUseCases.Queries.GetRecordsByCardIdQueryHandler" Collapsed="true">
     <Position X="9.5" Y="5" Width="3" />
@@ -204,6 +201,38 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
       <FileName>RecordUseCases\Queries\GetRecordsQueryHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Strategies.AnalyzisStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Strategies\AnalyzisStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Strategies.PsychologistStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAEAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Strategies\PsychologistStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.DoctorUseCases.Strategies.TherapistStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DoctorUseCases\Strategies\TherapistStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ACS_Reception.Application.RecordUseCases.Queries.GetRecordByIdQueryHandler" Collapsed="true">
+    <Position X="9.5" Y="7" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>RecordUseCases\Queries\GetRecordByIdQueryHandler.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>

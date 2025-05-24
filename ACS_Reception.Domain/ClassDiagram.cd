@@ -1,87 +1,135 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="ACS_Reception.Domain.Entities.CardRecords.DoctorAttendance" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="4" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAQBAAAAAAEAAAA=</HashCode>
-      <FileName>Entities\CardRecords\DoctorAttendance.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="ACS_Reception.Domain.Entities.CardRecords.Prescription" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="5.75" Y="2.75" Width="1.5" />
+    <Position X="6.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="ACS_Reception.Domain.Entities.CardRecord" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="2.441" />
+        <Point X="6.5" Y="5" />
+        <Point X="6.75" Y="5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAEAQAAAAAAAABAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAoAAAEAAAAAAAAEBAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\CardRecords\Prescription.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.CardRecords.Analyzis" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="2.75" Width="1.5" />
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <InheritanceLine Type="ACS_Reception.Domain.Entities.CardRecord" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="2.441" />
+        <Point X="6.5" Y="3.063" />
+        <Point X="6.75" Y="3.063" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAEAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAgAAABAAAAAAAAEBAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\CardRecords\Analyzis.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ACS_Reception.Domain.Entities.CardRecords.Analyzises.UrineAnalyzis" Collapsed="true">
-    <Position X="1.25" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\CardRecords\Analyzises\UrineAnalyzis.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="ACS_Reception.Domain.Entities.CardRecords.Analyzises.BloodAnalyzis" Collapsed="true">
-    <Position X="3.25" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\CardRecords\Analyzises\BloodAnalyzis.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.Card" Collapsed="true">
     <Position X="1.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAg=</HashCode>
+      <HashCode>AACAAEAAAAAAAAAEgAAAAAQAAAAAAAAAAAAAAAAAgAg=</HashCode>
       <FileName>Entities\Card.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.Doctor" Collapsed="true">
-    <Position X="6.25" Y="1.75" Width="1.5" />
+    <Position X="3.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAEAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAg=</HashCode>
+      <HashCode>AAAAAEAAAAAAAAAEgAAAQAAAAAAAAAAAAAAAAAAAAQg=</HashCode>
       <FileName>Entities\Doctor.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="Schedule" />
-    </ShowAsAssociation>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ACS_Reception.Domain.Entities.CardRecord" Collapsed="true">
-    <Position X="4" Y="1.75" Width="1.5" />
+    <Position X="5.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAkAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAERBAAAAAAgAAAA=</HashCode>
       <FileName>Entities\CardRecord.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
-  <Struct Name="ACS_Reception.Domain.Entities.Schedule" Collapsed="true">
-    <Position X="8.75" Y="1.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAQAAIAACAAAAAAAAAAACAAIACAIAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\Schedule.cs</FileName>
-    </TypeIdentifier>
-  </Struct>
-  <Interface Name="ACS_Reception.Domain.Abstraction.IEntity" Collapsed="true">
-    <Position X="1.75" Y="0.75" Width="6" />
+  <Class Name="ACS_Reception.Domain.Entities.Entity" Collapsed="true">
+    <Position X="3.75" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Abstraction\IEntity.cs</FileName>
+      <FileName>Entities\Entity.cs</FileName>
     </TypeIdentifier>
-  </Interface>
-  <Interface Name="Baskin_353501.Domain.Abstractions.IRepository&lt;T&gt;" Collapsed="true">
-    <Position X="7.75" Y="2.75" Width="1.5" />
+  </Class>
+  <Class Name="ACS_Reception.Domain.Entities.CardRecords.Check" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="ACS_Reception.Domain.Entities.CardRecord" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="2.441" />
+        <Point X="6.5" Y="4.125" />
+        <Point X="6.75" Y="4.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAACAAAAAAAAAEBAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\CardRecords\Check.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ACS_Reception.Domain.Entities.CardRecords.SickList" Collapsed="true">
+    <Position X="6.75" Y="5.75" Width="1.5" />
+    <InheritanceLine Type="ACS_Reception.Domain.Entities.CardRecord" FixedToPoint="true">
+      <Path>
+        <Point X="6.5" Y="2.441" />
+        <Point X="6.5" Y="6.125" />
+        <Point X="6.75" Y="6.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAgAAAAAEBAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\CardRecords\SickList.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ACS_Reception.Domain.DTOs.AttendanceInfo">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAA=</HashCode>
+      <FileName>DTOs\AttendanceInfo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AttendanceReason" />
+      <Property Name="Card" />
+      <Property Name="Doctor" />
+    </ShowAsAssociation>
+  </Class>
+  <Interface Name="ACS_Reception.Domain.Abstractions.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="9.25" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAQAAAAAAAAAEAAAAAIAgAAAAAAAAAIIE=</HashCode>
-      <FileName>Abstraction\IRepository.cs</FileName>
+      <FileName>Abstractions\IRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="ACS_Reception.Domain.Abstractions.IDoctorStrategy" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\IDoctorStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ACS_Reception.Domain.Abstractions.ISerializer" Collapsed="true">
+    <Position X="9.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAYAAAAAAAAAA=</HashCode>
+      <FileName>Abstractions\ISerializer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ACS_Reception.Domain.Abstractions.IUnitOfWork" Collapsed="true">
+    <Position X="9.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAEAAAAAgAAAAAIAAAAAAAAAACACAAAAAAA=</HashCode>
+      <FileName>Abstractions\IUnitOfWork.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="ACS_Reception.Domain.DTOs.AttendanceReason" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAYAAAA=</HashCode>
+      <FileName>DTOs\AttendanceInfo.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

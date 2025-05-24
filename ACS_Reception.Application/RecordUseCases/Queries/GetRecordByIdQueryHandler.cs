@@ -1,8 +1,8 @@
 ﻿namespace ACS_Reception.Application.RecordUseCases.Queries
 {
-    public class GetRecordByIdQueryHandler(IUnitOfWork unitOfWork) : IRequestHandler<GetRecordByIDQuery, CardRecord>
+    public class GetRecordByIdQueryHandler(IUnitOfWork unitOfWork) : IRequestHandler<GetRecordByIdQuery, CardRecord>
     {
-        public async Task<CardRecord> Handle(GetRecordByIDQuery request, CancellationToken cancellationToken)
+        public async Task<CardRecord> Handle(GetRecordByIdQuery request, CancellationToken cancellationToken)
         {
             return await unitOfWork.RecordRepository.GetByIdAsync(request.Id, cancellationToken);
         }

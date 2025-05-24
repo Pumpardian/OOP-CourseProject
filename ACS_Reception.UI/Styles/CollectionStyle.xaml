@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ACS_Reception.UI.Styles.CollectionStyle">
+
+    <Style x:Key="Scroll" TargetType="ScrollView">
+    </Style>
+
+    <Style x:Key="InfoBorder" TargetType="Border">
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="StrokeDashArray" Value="10, 3" />
+        <Setter Property="StrokeThickness" Value="1"/>
+        <Setter Property="StrokeShape" Value="RoundRectangle 5,5,5,5"/>
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="Blue" Offset="0.75"/>
+                <GradientStop Color="SteelBlue" Offset="0.95"/>
+            </LinearGradientBrush>
+        </Setter> 
+    </Style>
+
+    <Style x:Key="Switch" TargetType="Switch">
+        <Setter Property="ThumbColor" Value="LightBlue" />
+        <Setter Property="OnColor" Value="DeepSkyBlue" />
+    </Style>
+
+    <Style x:Key="ItemPicker" TargetType="Picker" ApplyToDerivedTypes="True">
+        <Setter Property="Background" Value="CornflowerBlue" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="#242424" />
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="PointerOver" >
+                        <VisualState.Setters>
+                            <Setter Property="Background">
+                                <LinearGradientBrush>
+                                    <GradientStop Color="CornflowerBlue" Offset="0.2"/>
+                                    <GradientStop Color="CadetBlue" Offset="0.65"/>
+                                    <GradientStop Color="Aquamarine" Offset="0.95"/>
+                                </LinearGradientBrush>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CollectionBorder" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="StrokeThickness" Value="0.5"/>
+        <Setter Property="Stroke" Value="DarkSlateBlue" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="White" Offset="0.2"/>
+                <GradientStop Color="AntiqueWhite" Offset="0.8"/>
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+
+    <Style x:Key="SortBorder" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="Margin" Value="0,0,0,10" />
+        <Setter Property="Padding" Value="5,5,5,5" />
+        <Setter Property="StrokeThickness" Value="0.5"/>
+        <Setter Property="Stroke" Value="DarkSlateBlue" />
+        <Setter Property="Background" Value="CadetBlue">
+        </Setter>
+    </Style>
+
+    <Style x:Key="Collection" TargetType="CollectionView">
+        <Setter Property="EmptyView" Value="No items to display" />
+        <Setter Property="Margin" Value="8" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="ItemsLayout">
+            <LinearItemsLayout Orientation="Vertical" ItemSpacing="2" />
+        </Setter>
+    </Style>
+
+    <Style x:Key="CollectionItemBorder" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 20,20,20,20"/>
+        <Setter Property="StrokeThickness" Value="2.5"/>
+        <Setter Property="Stroke" Value="Black" />
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Background" Value="CornflowerBlue" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Focused"/>
+                    <VisualState x:Name="PointerOver" >
+                        <VisualState.Setters>
+                            <Setter Property="Padding" Value="8.5"/>
+                            <Setter Property="StrokeThickness" Value="4" />
+                            <Setter Property="Stroke" Value="White" />
+                            <Setter Property="Background">
+                                <LinearGradientBrush>
+                                    <GradientStop Color="CornflowerBlue" Offset="0.2"/>
+                                    <GradientStop Color="CadetBlue" Offset="0.65"/>
+                                    <GradientStop Color="Aquamarine" Offset="0.95"/>
+                                </LinearGradientBrush>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="CollectionItemLayout" TargetType="HorizontalStackLayout">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="Spacing" Value="25" />
+    </Style>
+    
+    <Style x:Key="CollectionItemText" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="TextColor" Value="#242424" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="Shadow" Value="3.5 2 0.25 DarkSlateBlue 0.15" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+    
+</ResourceDictionary>

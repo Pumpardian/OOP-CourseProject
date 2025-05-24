@@ -7,7 +7,7 @@ namespace ACS_Reception.UI.ViewModels
     public partial class AddOrEditDoctorPageViewModel(IMediator mediator) : ObservableObject, IQueryAttributable
     {
         private readonly IMediator mediator = mediator;
-        public List<DoctorType> DoctorTypes { get; set; } = Enum.GetValues<DoctorType>().ToList();
+        public List<DoctorType> DoctorTypes { get; set; } = [.. Enum.GetValues<DoctorType>()];
 
         [ObservableProperty] IAddOrEditDoctorRequest request;
 

@@ -1,5 +1,6 @@
 ﻿using ACS_Reception.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
+using MongoDB.Bson;
 using System.Linq.Expressions;
 
 namespace ACS_Reception.Persistence.Repository
@@ -28,7 +29,7 @@ namespace ACS_Reception.Persistence.Repository
             return (await entities.FirstOrDefaultAsync(filter, cancellationToken))!;
         }
 
-        public async Task<T> GetByIdAsync(int id, CancellationToken cancellationToken = default, params Expression<Func<T, object>>[]? includesProperties)
+        public async Task<T> GetByIdAsync(ObjectId id, CancellationToken cancellationToken = default, params Expression<Func<T, object>>[]? includesProperties)
         {
             IQueryable<T>? query = entities.AsQueryable();
             if (includesProperties is not null && includesProperties.Length != 0)

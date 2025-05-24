@@ -1,4 +1,6 @@
-﻿namespace ACS_Reception.Application.CardUseCases.Queries
+﻿using MongoDB.Bson;
+
+namespace ACS_Reception.Application.CardUseCases.Queries
 {
-    public sealed record GetCardByIdQuery(int Id) : IRequest<Card>;
+    public sealed record GetCardByIdQuery(ObjectId Id) : IRequest<Card>;
 }

@@ -1,6 +1,6 @@
-﻿using ACS_Reception.UI.Pages;
+﻿using ACS_Reception.Application;
+using ACS_Reception.UI.Pages;
 using ACS_Reception.UI.ViewModels;
-using CommunityToolkit.Maui;
 
 namespace ACS_Reception.UI
 {
@@ -15,7 +15,8 @@ namespace ACS_Reception.UI
                 .AddTransient<AddOrEditCardPage>()
                 .AddTransient<DoctorDetailsPage>()
                 .AddTransient<RecordDetailsPage>()
-                .AddTransient<AttendancePage>();
+                .AddTransient<AttendancePage>()
+                .AddTransient<ChartsPage>();
 
             return services;
         }
@@ -30,6 +31,13 @@ namespace ACS_Reception.UI
                 .AddTransient<DoctorDetailsPageViewModel>()
                 .AddTransient<RecordDetailsPageViewModel>()
                 .AddTransient<AttendancePageViewModel>();
+
+            return services;
+        }
+
+        public static IServiceCollection RegisterMisc(this IServiceCollection services)
+        {
+            services.AddSingleton<AttendanceDistributor>();
 
             return services;
         }

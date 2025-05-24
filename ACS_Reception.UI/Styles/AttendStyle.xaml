@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ACS_Reception.UI.Styles.AttendStyle">
+
+    <Style x:Key="Scroll" TargetType="ScrollView">
+    </Style>
+
+    <Style x:Key="ItemLayout" TargetType="HorizontalStackLayout">
+        <Setter Property="VerticalOptions" Value="Center" />
+        <Setter Property="HorizontalOptions" Value="Fill" />
+        <Setter Property="Spacing" Value="25" />
+    </Style>
+    
+    <Style x:Key="ItemText" TargetType="Label">
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="TextColor" Value="#242424" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="Shadow" Value="3.5 2 0.25 AntiqueWhite 0.15" />
+        <Setter Property="VerticalOptions" Value="Center" />
+    </Style>
+
+    <Style x:Key="ItemsBorder" TargetType="Border">
+        <Setter Property="StrokeShape" Value="RoundRectangle 10,10,10,10"/>
+        <Setter Property="StrokeThickness" Value="0.5"/>
+        <Setter Property="Padding" Value="5,5,5,5" />
+        <Setter Property="Stroke" Value="DarkSlateBlue" />
+        <Setter Property="Background">
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="White" Offset="0.2"/>
+                <GradientStop Color="AntiqueWhite" Offset="0.8"/>
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ItemPicker" TargetType="Picker" ApplyToDerivedTypes="True">
+        <Setter Property="Background" Value="CornflowerBlue" />
+        <Setter Property="WidthRequest" Value="1000" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="#242424" />
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="PointerOver" >
+                        <VisualState.Setters>
+                            <Setter Property="Background">
+                                <LinearGradientBrush>
+                                    <GradientStop Color="CornflowerBlue" Offset="0.2"/>
+                                    <GradientStop Color="CadetBlue" Offset="0.65"/>
+                                    <GradientStop Color="Aquamarine" Offset="0.95"/>
+                                </LinearGradientBrush>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="ItemEntry" TargetType="Entry">
+        <Setter Property="Background" Value="CornflowerBlue" />
+        <Setter Property="WidthRequest" Value="1000" />
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="Medium" />
+        <Setter Property="TextColor" Value="#242424" />
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="PointerOver" >
+                        <VisualState.Setters>
+                            <Setter Property="Background">
+                                <LinearGradientBrush>
+                                    <GradientStop Color="CornflowerBlue" Offset="0.2"/>
+                                    <GradientStop Color="CadetBlue" Offset="0.65"/>
+                                    <GradientStop Color="Aquamarine" Offset="0.95"/>
+                                </LinearGradientBrush>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="Button" TargetType="Button">
+        <Setter Property="Background" Value="SteelBlue"/>
+        <Setter Property="FontFamily" Value="OpenSansSemibold" />
+        <Setter Property="FontSize" Value="Large" />
+        <Setter Property="Shadow" Value="3.5 3.5 0.35 Black 0.35" />
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="PointerOver" >
+                        <VisualState.Setters>
+                            <Setter Property="Background">
+                                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                                    <GradientStop Color="Blue" Offset="0.75"/>
+                                    <GradientStop Color="SteelBlue" Offset="0.95"/>
+                                </LinearGradientBrush>
+                            </Setter>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>

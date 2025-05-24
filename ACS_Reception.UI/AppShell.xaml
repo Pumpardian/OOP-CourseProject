@@ -4,12 +4,28 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:ACS_Reception.UI"
+    xmlns:pages="clr-namespace:ACS_Reception.UI.Pages"
     Shell.FlyoutBehavior="Flyout"
-    Title="ACS_Reception.UI">
+    Title="Reception">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Title="Attendance"
+        ContentTemplate="{DataTemplate pages:AttendancePage}"
+        Route="AttendancePage" />
+
+    <ShellContent
+        Title="Cards"
+        ContentTemplate="{DataTemplate pages:CardsPage}"
+        Route="CardsPage" />
+
+    <ShellContent
+        Title="Doctors"
+        ContentTemplate="{DataTemplate pages:DoctorsPage}"
+        Route="DoctorsPage" />
+
+    <ShellContent
+        Title="Charts"
+        ContentTemplate="{DataTemplate pages:ChartsPage}"
+        Route="ChartsPage" />
 
 </Shell>

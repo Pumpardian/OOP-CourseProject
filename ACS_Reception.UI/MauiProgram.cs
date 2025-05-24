@@ -7,6 +7,8 @@ using ACS_Reception.Persistence.Data;
 using Microsoft.EntityFrameworkCore;
 using ACS_Reception.Application;
 using ACS_Reception.Persistence;
+using ACS_Reception.Domain.Abstractions;
+using Microcharts.Maui;
 
 namespace ACS_Reception.UI;
 
@@ -20,6 +22,7 @@ public static class MauiProgram
 		builder
 			.UseMauiCommunityToolkit()
 			.UseMauiApp<App>()
+            .UseMicrocharts()
 			.ConfigureFonts(fonts =>
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -30,23 +33,31 @@ public static class MauiProgram
         using var stream = a.GetManifestResourceStream(settingsStream);
         builder.Configuration.AddJsonStream(stream);
 
-
-        var connStr = builder.Configuration
-             .GetConnectionString("MongoDBConnection");
-        var mongoClient = new MongoClient(connStr);
-
-		var options = new DbContextOptionsBuilder<AppDbContext>().UseMongoDB(mongoClient, "ACS_Reception").Options;
-
+        var mongoDBSettings = builder.Configuration.GetSection("MongoDBSettings");
+        var mongoClient = new MongoClient(mongoDBSettings.GetSection("AtlasURI").Value);
+        
+        var options = new DbContextOptionsBuilder<AppDbContext>().UseMongoDB(mongoClient, mongoDBSettings.GetSection("DatabaseName").Value!).Options;
 #if DEBUG
         builder.Logging.AddDebug();
 #endif
 
-		builder.Services
+        string? libPath = builder.Configuration.GetSection("SerializerLib").Value;
+        if (libPath != null && File.Exists(libPath))
+        {
+            var assembly = Assembly.LoadFrom(libPath);
+
+            var serializerType = assembly.GetType("ACS_Reception.SerializerLib.Serializer");
+            var serializer = Activator.CreateInstance(serializerType!);
+            builder.Services.AddSingleton<ISerializer>((serializer as ISerializer)!);
+        }
+
+        builder.Services
 			.AddApplication()
 			.AddPersistence(options)
 			.RegisterPages()
-			.RegisterViewModels();
+			.RegisterViewModels()
+			.RegisterMisc();
 
-		return builder.Build();
+        return builder.Build();
 	}
 }

@@ -8,65 +8,93 @@
              xmlns:entities="clr-namespace:ACS_Reception.Domain.Entities;assembly=ACS_Reception.Domain"
              x:Name="Cards"
              x:DataType="models:CardsPageViewModel"
-             Title="CardsPage">
+             Title="">
 
     <ContentPage.Resources>
         <converters:ValueToBooleanConverter x:Key="IsNotNull" />
+
+        <ResourceDictionary Source="/Styles/CollectionStyle.xaml"/>
     </ContentPage.Resources>
 
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior
             EventName="Appearing"
             Command="{Binding BindingContext.UpdateCardListCommand, Source={x:Reference Cards}}" />
+        <toolkit:EventToCommandBehavior
+            EventName="Appearing"
+            Command="{Binding BindingContext.UpdateSerializationStatusCommand, Source={x:Reference Cards}}" />
     </ContentPage.Behaviors>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Command="{Binding AddCardCommand}" />
-    </ContentPage.ToolbarItems>
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="Cards">
+            <MenuFlyoutItem Text="Add" Command="{Binding AddCardCommand}"/>
+        </MenuBarItem>
 
-    <ScrollView>
-        <StackLayout>
-            <Border BackgroundColor="Bisque"
-                    StrokeShape="RoundRectangle 25,25,25,25"
-                    StrokeThickness="2">
-                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                    <Label Text="{Binding Cards.Count, StringFormat='Cards Count: {0}'}" TextColor="Black"/>
-                </HorizontalStackLayout>
+        <MenuBarItem Text="Serialization" IsEnabled="{Binding IsSerializationPluginConnected}">
+            <MenuFlyoutSubItem Text="Serialize">
+                <MenuFlyoutItem Text="Json" Command="{Binding SerializeJsonCommand}"/>
+                <MenuFlyoutItem Text="Xml" Command="{Binding SerializeXmlCommand}"/>
+            </MenuFlyoutSubItem>
+            <MenuFlyoutSubItem Text="Deserialize">
+                <MenuFlyoutItem Text="Json" Command="{Binding DeserializeJsonCommand}"/>
+                <MenuFlyoutItem Text="Xml" Command="{Binding DeserializeXmlCommand}"/>
+            </MenuFlyoutSubItem>
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+    <ScrollView Style="{StaticResource Scroll}">
+        <StackLayout Spacing="10">
+            <Border Style="{StaticResource InfoBorder}">
+                <Label Text="{Binding Cards.Count, StringFormat='Cards Count: {0}'}" Style="{StaticResource CollectionItemText}" HorizontalOptions="Center"/>
             </Border>
 
-            <CollectionView ItemsSource="{Binding Cards}"
-                VerticalOptions="FillAndExpand">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="entities:Card">
-                        <Border Margin="5" Padding="5"
-                                BackgroundColor="AntiqueWhite">
-                            <Border.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding Source=
+            <Border Style="{StaticResource CollectionBorder}">
+                <CollectionView ItemsSource="{Binding Cards}" Style="{StaticResource Collection}" >
+                    <CollectionView.Header>
+                        <Border Style="{StaticResource SortBorder}">
+                            <HorizontalStackLayout Style="{StaticResource CollectionItemLayout}">
+                                <Label Text="Sort By" Style="{StaticResource CollectionItemText}" />
+                                <Picker ItemsSource="{Binding SortBy}" x:Name="SortPicker" Style="{StaticResource ItemPicker}">
+                                    <Picker.Behaviors>
+                                        <toolkit:EventToCommandBehavior EventName="SelectedIndexChanged"
+                                                Command="{Binding BindingContext.SortCommand, Source={x:Reference Cards}}"
+                                                CommandParameter="{Binding SelectedIndex, Source={x:Reference SortPicker}}"/>
+                                    </Picker.Behaviors>
+                                </Picker>
+
+                                <Label Text="Reverse" Style="{StaticResource CollectionItemText}"/>
+                                <Switch IsToggled="{Binding ReverseSort}" Style="{StaticResource Switch}" IsEnabled="{Binding SelectedItem, Converter={StaticResource IsNotNull}, Source={x:Reference SortPicker}}">
+                                    <Switch.Behaviors>
+                                        <toolkit:EventToCommandBehavior EventName="Toggled"
+                                                Command="{Binding BindingContext.SortCommand, Source={x:Reference Cards}}"
+                                                CommandParameter="{Binding SelectedIndex, Source={x:Reference SortPicker}}"/>       
+                                    </Switch.Behaviors>
+                                </Switch>
+                            </HorizontalStackLayout>
+                        </Border>
+                    </CollectionView.Header>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="entities:Card">
+                            <Border Style="{StaticResource CollectionItemBorder}">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source=
                                                         {RelativeSource AncestorType=
                                                         {x:Type models:CardsPageViewModel}},
                                                         Path=ShowCardDetailsCommand}" 
                                                       CommandParameter="{Binding}"/>
-                            </Border.GestureRecognizers>
+                                </Border.GestureRecognizers>
 
-                            <Border Margin="5"
-                                        BackgroundColor="Black"
-                                        HeightRequest="110"
-                                        WidthRequest="110"
-                                        Clip="True" 
-                                        StrokeShape="RoundRectangle 25,25,25,25"
-                                        StrokeThickness="2"
-                                        HorizontalOptions="Center"
-                                        VerticalOptions="Center">
-                                <HorizontalStackLayout VerticalOptions="Center" Spacing="15">
-                                    <Label Text="{Binding LastName}" TextColor="Black"/>
-                                    <Label Text="{Binding FirstName}" TextColor="Black"/>
-                                    <Label Text="{Binding BirthDate, StringFormat='Birth Date: {0}'}" TextColor="Black"/>
+                                <HorizontalStackLayout Style="{StaticResource CollectionItemLayout}">
+                                    <Label Text="{Binding LastName}" Style="{StaticResource CollectionItemText}"/>
+                                    <Label Text="{Binding FirstName}"  Style="{StaticResource CollectionItemText}"/>
+                                    <Label Text="{Binding BirthDate.Year, StringFormat='{0}'}" Style="{StaticResource CollectionItemText}"/>
                                 </HorizontalStackLayout>
                             </Border>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
         </StackLayout>    
     </ScrollView>
     
