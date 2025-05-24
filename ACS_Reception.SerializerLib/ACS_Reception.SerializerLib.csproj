@@ -7,11 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.5.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\ACS_Reception.Application\ACS_Reception.Application.csproj" />
     <ProjectReference Include="..\ACS_Reception.Domain\ACS_Reception.Domain.csproj" />
+    <ProjectReference Include="..\ACS_Reception.Persistence\ACS_Reception.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
