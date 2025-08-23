@@ -31,7 +31,7 @@ public static class MauiProgram
 
         var a = Assembly.GetExecutingAssembly();
         using var stream = a.GetManifestResourceStream(settingsStream);
-        builder.Configuration.AddJsonStream(stream);
+        builder.Configuration.AddJsonStream(stream!);
 
         var mongoDBSettings = builder.Configuration.GetSection("MongoDBSettings");
         var mongoClient = new MongoClient(mongoDBSettings.GetSection("AtlasURI").Value);
@@ -46,17 +46,20 @@ public static class MauiProgram
         {
             var assembly = Assembly.LoadFrom(libPath);
 
-            var serializerType = assembly.GetType("ACS_Reception.SerializerLib.Serializer");
-            var serializer = Activator.CreateInstance(serializerType!);
-            builder.Services.AddSingleton<ISerializer>((serializer as ISerializer)!);
+            var types = assembly.GetTypes();
+            var serializerType = types.Where(t => t.GetInterfaces().Contains(typeof(ISerializer))).FirstOrDefault();
+            if (serializerType != null)
+            {
+                var serializer = Activator.CreateInstance(serializerType);
+                builder.Services.AddSingleton<ISerializer>((serializer as ISerializer)!);
+            }
         }
 
         builder.Services
-			.AddApplication()
-			.AddPersistence(options)
-			.RegisterPages()
-			.RegisterViewModels()
-			.RegisterMisc();
+            .AddApplication()
+            .AddPersistence(options)
+            .RegisterPages()
+            .RegisterViewModels();
 
         return builder.Build();
 	}

@@ -72,28 +72,5 @@ namespace ACS_Reception.Tests.SerializationTests
             Assert.Equal(card, card2);
             Assert.Equal(doc, doc2);
         }
-
-        /*[Fact]
-        public async Task Xml_Serialize_and_Deserialize_correct_with_polymorphism()
-        {
-            string filename = "test4.xml";
-
-            List<CardRecord> recs =
-            [
-                new Analyzis(ObjectId.GenerateNewId(), DateTime.Now, "doc1", AnalizysResults.Norm),
-                new Check(ObjectId.GenerateNewId(), DateTime.Now, "doc2", DoctorType.Psychologist, "response2"),
-                new Prescription(ObjectId.GenerateNewId(), DateTime.Now, "doc3", "testicine", 0.25),
-            ];
-
-            Serializer serializer = new();
-            await serializer.SerializeXml(recs, filename);
-
-            List<CardRecord> recs2 = await serializer.DeserializeXml<List<CardRecord>>(filename);
-
-            Assert.All(recs, (c) => recs2.Contains(c));
-            Assert.True(recs2.ElementAt(0) is Analyzis);
-            Assert.True(recs2.ElementAt(1) is Check);
-            Assert.True(recs2.ElementAt(2) is Prescription);
-        }*/
     }
 }

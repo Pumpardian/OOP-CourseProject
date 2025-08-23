@@ -19,9 +19,6 @@
             EventName="Appearing"
             Command="{Binding BindingContext.GetCardByIdCommand, Source={x:Reference CardDetails}}" />
         <toolkit:EventToCommandBehavior
-            EventName="NavigatedTo"
-            Command="{Binding BindingContext.GetCardByIdCommand, Source={x:Reference CardDetails}}" />
-        <toolkit:EventToCommandBehavior
             EventName="Appearing"
             Command="{Binding BindingContext.UpdateSerializationStatusCommand, Source={x:Reference CardDetails}}" />
     </ContentPage.Behaviors>

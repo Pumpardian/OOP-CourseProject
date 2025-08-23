@@ -6,7 +6,9 @@ namespace ACS_Reception.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddMediatR(conf => conf.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+            //services.AddMediatR(conf => conf.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly));
+            services.AddSingleton<IMediator, Mediator>()
+                .AddSingleton<AttendanceDistributor>();
 
             return services;
         }

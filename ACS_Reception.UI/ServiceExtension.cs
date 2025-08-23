@@ -34,12 +34,5 @@ namespace ACS_Reception.UI
 
             return services;
         }
-
-        public static IServiceCollection RegisterMisc(this IServiceCollection services)
-        {
-            services.AddSingleton<AttendanceDistributor>();
-
-            return services;
-        }
     }
 }

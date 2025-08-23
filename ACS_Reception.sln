@@ -10,6 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACS_Reception.Application",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACS_Reception.Persistence", "ACS_Reception.Persistence\ACS_Reception.Persistence.csproj", "{93D30B2D-CD85-4808-85F3-AED4B8FDB977}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACS_Reception.Tests", "ACS_Reception.Tests\ACS_Reception.Tests.csproj", "{44A070F5-43DB-4B46-8416-4FC238954B4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACS_Reception.SerializerLib", "ACS_Reception.SerializerLib\ACS_Reception.SerializerLib.csproj", "{B67911F5-C612-4593-B9E7-C89FD21BED63}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{93D30B2D-CD85-4808-85F3-AED4B8FDB977}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D30B2D-CD85-4808-85F3-AED4B8FDB977}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93D30B2D-CD85-4808-85F3-AED4B8FDB977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44A070F5-43DB-4B46-8416-4FC238954B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A070F5-43DB-4B46-8416-4FC238954B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A070F5-43DB-4B46-8416-4FC238954B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A070F5-43DB-4B46-8416-4FC238954B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B67911F5-C612-4593-B9E7-C89FD21BED63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B67911F5-C612-4593-B9E7-C89FD21BED63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B67911F5-C612-4593-B9E7-C89FD21BED63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B67911F5-C612-4593-B9E7-C89FD21BED63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
